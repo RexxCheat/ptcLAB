@@ -1,6 +1,6 @@
 # ptcLAB - Pay Per Click Platform
 
-![ptcLAB Banner](https://codecanyon.net/item/ptclab-pay-per-click-platform/full_screen_preview/28811404)
+![ptcLAB Banner](https://github.com/Rexx-Cheat/ptcLAB/blob/main/Preview.avif)
 
 [![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel)](https://laravel.com)
 [![PHP](https://img.shields.io/badge/PHP-8.3-777BB4?style=for-the-badge&logo=php)](https://php.net)
