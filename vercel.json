@@ -1,0 +1,39 @@
+{
+    "version": 2,
+    "functions": {
+        "index.php": {
+            "runtime": "vercel-php@0.6.0"
+        }
+    },
+    "routes": [
+        {
+            "src": "/assets/(.*)",
+            "dest": "/assets/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/index.php"
+        }
+    ],
+    "env": {
+        "APP_ENV": "production",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://ptc-lab-zeta.vercel.app",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie",
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "NODE_PATH": "node"
+    },
+    "build": {
+        "env": {
+            "PHP_VERSION": "8.1"
+        }
+    }
+}
