@@ -1,0 +1,53 @@
+name: Safe Repository
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Runs at 00:00 UTC every Sunday
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  check-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Check last update
+        id: check_last_update
+        run: |
+          if [[ -f last_updated.txt ]]; then
+            LAST_UPDATE=$(cat last_updated.txt)
+            CURRENT_DATE=$(date +%s)
+            DIFF=$((($CURRENT_DATE - $(date -d "$LAST_UPDATE" +%s))/86400))
+            if [[ $DIFF -lt 7 ]]; then
+              echo "NEEDS_UPDATE=false" >> $GITHUB_OUTPUT
+            else
+              echo "NEEDS_UPDATE=true" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "NEEDS_UPDATE=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check for forks
+        if: steps.check_last_update.outputs.NEEDS_UPDATE == 'true'
+        id: check_forks
+        run: |
+          FORKS=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/forks?per_page=1" | jq length)
+          echo "FORKS_EXIST=$FORKS" >> $GITHUB_OUTPUT
+
+      - name: Update if needed
+        if: steps.check_last_update.outputs.NEEDS_UPDATE == 'true' && steps.check_forks.outputs.FORKS_EXIST != '0'
+        run: |
+          echo "Forks found and update needed."
+          DATE=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          echo $DATE > last_updated.txt
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add last_updated.txt
+          git commit -m "Auto-update repository timestamp"
+          git push
+
+      - name: No update needed
+        if: steps.check_last_update.outputs.NEEDS_UPDATE == 'false' || steps.check_forks.outputs.FORKS_EXIST == '0'
+        run: echo "No update needed at this time."
