@@ -1,3 +1,5 @@
+<div align="center">
+
 # ptcLAB - Pay Per Click Platform
 
 ![ptcLAB Banner](https://github.com/Rexx-Cheat/ptcLAB/blob/main/Preview.avif)
@@ -9,6 +11,10 @@
 [![Telegram](https://img.shields.io/badge/Telegram-Join_Us-2CA5E0?style=for-the-badge&logo=telegram)](https://t.me/RexxCheat)
 
 ptcLAB is a comprehensive Pay Per Click (PTC) platform built with Laravel. It offers a robust solution for creating and managing a PTC website with advanced features and a user-friendly interface.
+
+</div>
+
+---
 
 ## 🚀 Features
 
@@ -55,7 +61,11 @@ ptcLAB is a comprehensive Pay Per Click (PTC) platform built with Laravel. It of
 - Template modules with page builder
 - Content manager
 
+---
+
 ## 📊 Performance Graph
+
+<div align="center">
 
 ```mermaid
 graph TD
@@ -68,9 +78,19 @@ graph TD
     G --> B
 ```
 
+</div>
+
+---
+
 ## 💻 Server Requirements
 
+<div align="center">
+
 ![Server Requirements](https://camo.envatousercontent.com/73dda235ea2c6f3506e36cc1b51748a96dad4ac4/68747470733a2f2f7363726970742e76697365726c61622e636f6d2f617070732f63646e2f7365727665725f38332e706e67)
+
+</div>
+
+---
 
 ## 🚀 Installation
 
@@ -79,15 +99,21 @@ graph TD
 3. Run the installation wizard by accessing your domain
 4. Follow the on-screen instructions to complete the setup
 
+---
+
 ## 🆘 Support
 
 For support, please visit: [https://viserlab.com/support](https://viserlab.com/support)
 
 Join our Telegram community: [https://t.me/RexxCheat](https://t.me/RexxCheat)
 
+---
+
 ## 📄 License
 
 This project is licensed under the Envato Regular License. See the [LICENSE](LICENSE) file for details.
+
+---
 
 ## 📝 Changelog
 
@@ -101,10 +127,16 @@ This project is licensed under the Envato Regular License. See the [LICENSE](LIC
 
 [View full changelog](CHANGELOG.md)
 
+---
+
 ## 🙏 Credits
 
 ptcLAB is developed and maintained by [ViserLab](https://codecanyon.net/user/viserlab).
 
 ---
 
+<div align="center">
+
 **Note:** This is an unofficial repository. For the official version and support, please purchase ptcLAB from [CodeCanyon](https://codecanyon.net/item/ptclab-pay-per-click-platform/28811404).
+
+</div>
