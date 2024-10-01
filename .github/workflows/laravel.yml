@@ -1,4 +1,4 @@
-name: Laravel
+name: Laravel PTC System
 
 on:
   push:
@@ -11,10 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set up PHP with version 8.0
+    - name: Set up PHP with version 8.1
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.0'
+        php-version: '8.1'
+        extensions: bcmatch, ctype, curl, dom, fileinfo, gd, json, mbstring, openssl, pcre, pdo, pdo_mysql, tokenizer, xml
 
     - name: Checkout code
       uses: actions/checkout@v4
@@ -23,7 +24,7 @@ jobs:
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
     - name: Install Composer dependencies
-      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      run: composer install --no-ansi --no-interaction --no-scripts --prefer-dist
 
     - name: Generate Laravel Application Key
       run: php artisan key:generate
@@ -41,3 +42,9 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: php artisan test
+
+    - name: Check if allow_url_fopen is enabled
+      run: php -r "echo ini_get('allow_url_fopen') ? 'enabled' : 'disabled';"
+
+    - name: Check file_get_contents function
+      run: php -r "echo function_exists('file_get_contents') ? 'available' : 'not available';"
