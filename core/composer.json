@@ -1,0 +1,81 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.0.2",
+        "coingate/coingate-php": "^3.0",
+        "ezyang/htmlpurifier": "^4.13",
+        "guzzlehttp/guzzle": "^7.2",
+        "intervention/image": "^2.5",
+        "laramin/utility": "1.0.3",
+        "laravel/framework": "^9.2",
+        "laravel/sanctum": "^2.14.1",
+        "laravel/tinker": "^2.7",
+        "laravel/ui": "^3.4",
+        "mailjet/mailjet-apiv3-php": "^1.4",
+        "messagebird/php-rest-api": "^1.20",
+        "mollie/laravel-mollie": "^2.14",
+        "phpmailer/phpmailer": "^6.2",
+        "razorpay/razorpay": "2.*",
+        "sendgrid/sendgrid": "^7.6",
+        "stripe/stripe-php": "^7.72",
+        "textmagic/sdk": "dev-master",
+        "twilio/sdk": "^6.23",
+        "vonage/client": "^2.4"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.3",
+        "beyondcode/laravel-query-detector": "^1.5",
+        "fakerphp/faker": "^1.9.1",
+        "laravel/sail": "^1.0.1",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^6.1",
+        "phpunit/phpunit": "^9.5.10",
+        "spatie/laravel-ignition": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "app/Http/Helpers/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
