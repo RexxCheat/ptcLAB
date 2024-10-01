@@ -1,5 +1,3 @@
-# ptcLAB
-ptcLAB is a Laravel Based Script for Pay Per Click business. You can run your own PTC, PPC, or PPV website within a minutes without any programming knowledge.
 # ptcLAB - Pay Per Click Platform
 
 ![ptcLAB Banner](https://codecanyon.net/item/ptclab-pay-per-click-platform/full_screen_preview/28811404)
@@ -8,6 +6,7 @@ ptcLAB is a Laravel Based Script for Pay Per Click business. You can run your ow
 [![PHP](https://img.shields.io/badge/PHP-8.3-777BB4?style=for-the-badge&logo=php)](https://php.net)
 [![License](https://img.shields.io/badge/License-Envato-7CB342?style=for-the-badge)](LICENSE)
 [![CodeCanyon](https://img.shields.io/badge/CodeCanyon-ptcLAB-55C4DD?style=for-the-badge)](https://codecanyon.net/item/ptclab-pay-per-click-platform/28811404)
+[![Telegram](https://img.shields.io/badge/Telegram-Join_Us-2CA5E0?style=for-the-badge&logo=telegram)](https://t.me/RexxCheat)
 
 ptcLAB is a comprehensive Pay Per Click (PTC) platform built with Laravel. It offers a robust solution for creating and managing a PTC website with advanced features and a user-friendly interface.
 
@@ -83,6 +82,8 @@ graph TD
 ## 🆘 Support
 
 For support, please visit: [https://viserlab.com/support](https://viserlab.com/support)
+
+Join our Telegram community: [https://t.me/RexxCheat](https://t.me/RexxCheat)
 
 ## 📄 License
 
